@@ -17,6 +17,7 @@
 		3CA89FC02AE8420400B854AF /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3CA89FBF2AE8420400B854AF /* SnapKit */; };
 		3CA89FC22AE8420400B854AF /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 3CA89FC12AE8420400B854AF /* SnapKit-Dynamic */; };
 		3CA89FC82AE84B5700B854AF /* GeneralCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA89FC72AE84B5700B854AF /* GeneralCollectionViewCell.swift */; };
+		3CA89FCD2AE90E0A00B854AF /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA89FCC2AE90E0A00B854AF /* NewsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		3CA89FBA2AE6E98900B854AF /* BusinessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessViewController.swift; sourceTree = "<group>"; };
 		3CA89FBC2AE6E9E600B854AF /* TechnologyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechnologyViewController.swift; sourceTree = "<group>"; };
 		3CA89FC72AE84B5700B854AF /* GeneralCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralCollectionViewCell.swift; sourceTree = "<group>"; };
+		3CA89FCC2AE90E0A00B854AF /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				3CA89FC32AE84A3C00B854AF /* General */,
 				3CA89FC52AE84A5200B854AF /* Business */,
 				3CA89FC42AE84A4700B854AF /* Technology */,
+				3CA89FCB2AE90DDA00B854AF /* News */,
 				3CA89FA42AE455BD00B854AF /* AppDelegate.swift */,
 				3CA89FB82AE6E56500B854AF /* TabBarController.swift */,
 				3CA89FAD2AE455BE00B854AF /* Assets.xcassets */,
@@ -107,6 +110,14 @@
 				3CA89FC72AE84B5700B854AF /* GeneralCollectionViewCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		3CA89FCB2AE90DDA00B854AF /* News */ = {
+			isa = PBXGroup;
+			children = (
+				3CA89FCC2AE90E0A00B854AF /* NewsViewController.swift */,
+			);
+			path = News;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,6 +201,7 @@
 				3CA89FC82AE84B5700B854AF /* GeneralCollectionViewCell.swift in Sources */,
 				3CA89FB92AE6E56500B854AF /* TabBarController.swift in Sources */,
 				3CA89FA92AE455BD00B854AF /* GeneralViewController.swift in Sources */,
+				3CA89FCD2AE90E0A00B854AF /* NewsViewController.swift in Sources */,
 				3CA89FBB2AE6E98900B854AF /* BusinessViewController.swift in Sources */,
 				3CA89FA52AE455BD00B854AF /* AppDelegate.swift in Sources */,
 			);
