@@ -22,7 +22,6 @@ final class NewsViewController: UIViewController {
     private lazy var imageView: UIImageView = {
         let view = UIImageView()
         
-        view.image = UIImage(named: "Image")
         
         return view
     }()
@@ -30,7 +29,6 @@ final class NewsViewController: UIViewController {
     private lazy var dateLabel: UILabel = {
         let label = UILabel()
         
-        label.text = "25.10.2023"
         label.font = .systemFont(ofSize: 12)
         label.textColor = .darkGray
         
@@ -40,7 +38,6 @@ final class NewsViewController: UIViewController {
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         
-        label.text = "Some title for the news"
         label.font = .boldSystemFont(ofSize: 24)
         label.numberOfLines = 0
         
@@ -50,7 +47,6 @@ final class NewsViewController: UIViewController {
     private lazy var descriptionLabel: UILabel = {
         let label = UILabel()
         
-        label.text = "Hello world! Hello world! Hello world! Hello world! Hello world! Hello world! Hello world! Hello world! Hello world! Hello world! Hello world! Hello world! Hello world! Hello world! Hello world! Hello world! Hello world! Hello world! Hello world! Hello world! Hello world! Hello world! Hello world! Hello world! Hello world! Hello world! Hello world! Hello world! Hello world! Hello world! Hello world! Hello world! Hello world! Hello world! Hello world! Hello world! Hello world! Hello world! Hello world! Hello world! Hello world! Hello world! Hello world! Hello world! Hello world! Hello world! Hello world! Hello world! Hello world! Hello world! Hello world! Hello world! Hello world! Hello world! Hello world! Hello world! Hello world! Hello world! Hello world! Hello world! Hello world! Hello world! Hello world! Hello world! Hello world! Hello world! Hello world! Hello world! Hello world! Hello world! Hello world! Hello world! Hello world! Hello world! "
         label.font = .systemFont(ofSize: 14)
         label.textColor = .darkGray
         label.numberOfLines = 0
@@ -59,8 +55,19 @@ final class NewsViewController: UIViewController {
     
     //MARK: - Properties
     private let edgeInset = 10
+    private let viewModel: NewsViewModelProtocol
     
     //MARK: - Life Cycle
+    
+    init(viewModel: NewsViewModelProtocol) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -77,6 +84,17 @@ final class NewsViewController: UIViewController {
         contentView.addSubview(titleLabel)
         contentView.addSubview(descriptionLabel)
         view.addSubview(scrollView)
+        
+        titleLabel.text = viewModel.title
+        descriptionLabel.text = viewModel.description
+        dateLabel.text = viewModel.date
+        
+        if let data = viewModel.imageData,
+           let image = UIImage(data: data) {
+            imageView.image = image
+        } else {
+            imageView.image = UIImage(named: "Image")
+        }
         
         setupConstraints()
     }
