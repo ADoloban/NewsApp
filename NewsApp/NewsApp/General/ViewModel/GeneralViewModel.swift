@@ -44,8 +44,9 @@ final class GeneralViewModel: GeneralViewModelProtocol {
     }
     
     private func loadData() {
-        ApiManager.getNews { [weak self] result in
+        ApiManager.getNews(from: .general){ [weak self] result in
             guard let self = self else { return }
+            
             switch result {
             case .success(let articles):
                 self.articles = self.convertToCellViewModel(articles)

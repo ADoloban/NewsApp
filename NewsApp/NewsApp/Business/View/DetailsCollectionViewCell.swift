@@ -53,6 +53,17 @@ final class DetailsCollectionViewCell: UICollectionViewCell {
     }
     
     //MARK: - Methods
+    func set(article: ArticleCellViewModel) {
+        titleLabel.text = article.title
+        
+        if let data = article.imageData,
+           let image = UIImage(data: data) {
+            imageView.image = image
+        } else {
+            imageView.image = UIImage(named: "Image")
+        }
+    }
+    
     private func setupUI() {
         addSubview(imageView)
         addSubview(titleLabel)

@@ -14,7 +14,7 @@ final class TabBarController: UITabBarController {
         super.viewDidLoad()
         view.tintColor = .black
         setupViewControllers()
-        setupTapBar()
+        
     }
     
     private func setupViewControllers() {
@@ -23,9 +23,10 @@ final class TabBarController: UITabBarController {
             
             setupNavigationController(rootViewController: TechnologyViewController(), title: "Technology", image: UIImage(systemName: "gyroscope") ?? UIImage.add),
             
-            setupNavigationController(rootViewController: BusinessViewController(), title: "Business", image: UIImage(systemName: "briefcase") ?? UIImage.add)
+            setupNavigationController(rootViewController: BusinessViewController(viewModel: BusinessViewModel()), title: "Business", image: UIImage(systemName: "briefcase") ?? UIImage.add)
             
         ]
+        setupTapBar()
     }
     
     private func setupNavigationController(rootViewController: UIViewController,
